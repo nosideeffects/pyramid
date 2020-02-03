@@ -21,4 +21,11 @@ describe('isPyramidWord', () => {
         assert.equal(isPyramidWord('122333'), false);
         assert.equal(isPyramidWord('$banana'), false);
     });
+
+    it('should return false when provided a string that is not a pyramid word', () => {
+        assert.equal(isPyramidWord('bandana'), false);
+        assert.equal(isPyramidWord('word'), false);
+        assert.equal(isPyramidWord('sequential'), false);
+        assert.equal(isPyramidWord('baboon'), false);
+    });
 });
