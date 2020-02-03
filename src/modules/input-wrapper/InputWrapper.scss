@@ -1,0 +1,80 @@
+@import "../../styles/_colors";
+
+.input {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 1em;
+
+  &:hover .border {
+    opacity: 1;
+  }
+
+  &.active {
+    color: $primary;
+
+    .border {
+      opacity: 1;
+    }
+
+    .start {
+      border-width: 2px 0 2px 2px;
+    }
+
+    .label {
+      border-bottom-width: 2px;
+    }
+
+    .end {
+      border-width: 2px 2px 2px 0;
+    }
+  }
+
+  :global(input) {
+    margin: 0;
+    border: 0;
+    background: transparent;
+    padding: 1em;
+  }
+}
+
+.border {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0.5;
+
+  .start {
+    width: 0.7em;
+    border-color: currentColor;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-width: 1px 0 1px 1px;
+    border-style: solid;
+  }
+
+  .label {
+    display: flex;
+    padding: 0 0.3em;
+    align-items: flex-start;
+    border-bottom: solid 1px currentColor;
+
+    span {
+      font-size: 0.8em;
+      margin-top: -0.5em;
+    }
+  }
+
+  .end {
+    flex-grow: 1;
+    border-color: currentColor;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+  }
+}
